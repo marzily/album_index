@@ -9,3 +9,11 @@
 10.times do
   Artist.create(name: Faker::Name.name)
 end
+
+100.times do
+  Album.create(title: Faker::Hipster.word, artist_id: rand(10) + 1)
+end
+
+500.times do
+  Song.create(title: Faker::Book.title, artist_id: rand(10) + 1, album_id: rand(100) + 1)
+end
