@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @results = search_artist
+    @results = search_album
   end
 
   private
@@ -16,6 +16,11 @@ class WelcomeController < ApplicationController
     def search_artist
       Artist.search(search_params[:artist])
     end
+
+    def search_album
+      Album.search(search_params[:album])
+    end
+
 end
 
 
