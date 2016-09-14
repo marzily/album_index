@@ -1,2 +1,14 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Album Index</h1>
+
+<%= form_tag(:root, method: "get") do %>
+  <%= label_tag(:song, "Song Title:") %>
+  <%= text_field_tag(:song) %>
+
+  <%= label_tag(:album, "Album Title:") %>
+  <%= text_field_tag(:album) %>
+
+  <%= label_tag(:artist, "Artist Name:") %>
+  <%= text_field_tag(:artist) %>
+
+  <%= submit_tag("Search") %>
+<% end %>
