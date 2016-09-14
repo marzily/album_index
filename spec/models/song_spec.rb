@@ -41,4 +41,16 @@ RSpec.describe Song, type: :model do
     expect(song).to_not be_valid
   end
 
+  it 'must belong to an album' do
+    song.album_id = nil
+
+    expect(song).to_not be_valid
+  end
+
+  it 'must belong to an album in the database' do
+    song.album_id = 500
+
+    expect(song).to_not be_valid
+  end
+
 end
