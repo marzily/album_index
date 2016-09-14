@@ -10,4 +10,8 @@ class Song < ActiveRecord::Base
       errors.add(:album_id, 'Album must be in db.')
     end
   end
+
+  def self.search(title)
+    Song.where(title: title)
+  end
 end
