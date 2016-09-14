@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do
-  Faker::Name.name 
+  Artist.create(name: Faker::Name.name)
 end
