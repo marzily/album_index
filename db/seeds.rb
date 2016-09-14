@@ -7,7 +7,7 @@ end
 end
 
 500.times do
-  album_id = rand(10) + 1
-  artist_id = Album.find(album_id).artist_id
+  artist_id = rand(10) + 1
+  album_id = Artist.find(artist_id).albums.sample.id
   Song.create(title: Faker::Book.title, album_id: album_id, artist_id: artist_id)
 end
