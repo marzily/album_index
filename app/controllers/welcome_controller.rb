@@ -1,6 +1,8 @@
 class WelcomeController < ApplicationController
   def index
-    @results = search
+    if searchable?
+      @results = search
+    end
   end
 
   private
@@ -9,21 +11,43 @@ class WelcomeController < ApplicationController
       params.permit(:song, :album, :artist)
     end
 
-    def search
-      search_single_field
+    def searchable?
+      search_params.any? { |param| param }
     end
 
-    def search_single_field
-      if single_search?(search_params[:song], search_params[:album], search_params[:artist])
+    def search
+      single
+      # d_songs = double
+
+      # s_songs || d_songs
+    end
+
+    def double
+
+      if double?(search_params[:song], search_params[:album], search_params[:artist])
+        songs = search_album
+        songs.select { |song| song.title == search_params[:song] }
+
+      end
+
+    end
+
+    def double?(filled, filled2, blank)
+      !filled.empty? && !filled2.empty? && blank.empty?
+    end
+
+    def single
+      # byebug
+      if single?(search_params[:song], search_params[:album], search_params[:artist])
         search_song
-      elsif single_search?(search_params[:album], search_params[:song], search_params[:artist])
+      elsif single?(search_params[:album], search_params[:song], search_params[:artist])
         search_album
-      elsif single_search?(search_params[:artist], search_params[:album], search_params[:song])
+      elsif single?(search_params[:artist], search_params[:album], search_params[:song])
         search_artist
       end
     end
 
-    def single_search?(filled, blank, blank2)
+    def single?(filled, blank, blank2)
       !filled.empty? && blank.empty? && blank2.empty?
     end
 
