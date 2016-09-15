@@ -16,20 +16,36 @@ class WelcomeController < ApplicationController
     end
 
     def search
-      single
-      # d_songs = double
+      s_songs = single
+      d_songs = double
+      t_songs = tripple
 
-      # s_songs || d_songs
+      s_songs || d_songs || t_songs
+    end
+
+    def tripple
+      if tripple?(search_params[:song], search_params[:album], search_params[:artist])
+        songs = search_song
+        songs = songs.select { |song| song.album.title == search_params[:album] }
+        songs = songs.select { |song| song.artist.name == search_params[:artist] }
+      end
+    end
+
+    def tripple?(filled, filled2, filled3)
+      !filled.empty? && !filled2.empty? && !filled3.empty?
     end
 
     def double
-
       if double?(search_params[:song], search_params[:album], search_params[:artist])
+        songs = search_song
+        songs.select { |song| song.album.title == search_params[:album] }
+      elsif double?(search_params[:song], search_params[:artist], search_params[:album])
+        songs = search_song
+        songs.select { |song| song.artist.name == search_params[:artist] }
+      elsif double?(search_params[:album], search_params[:artist], search_params[:song])
         songs = search_album
-        songs.select { |song| song.title == search_params[:song] }
-
+        songs.select { |song| song.artist.name == search_params[:artist] }
       end
-
     end
 
     def double?(filled, filled2, blank)
@@ -37,7 +53,6 @@ class WelcomeController < ApplicationController
     end
 
     def single
-      # byebug
       if single?(search_params[:song], search_params[:album], search_params[:artist])
         search_song
       elsif single?(search_params[:album], search_params[:song], search_params[:artist])
