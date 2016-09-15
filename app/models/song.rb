@@ -12,6 +12,6 @@ class Song < ActiveRecord::Base
   end
 
   def self.search(title)
-    Song.where(title: title) || Song.where(title: title)
+    Song.where(title: title.downcase)
   end
 end
