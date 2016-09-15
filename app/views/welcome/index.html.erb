@@ -1,26 +1,22 @@
 <h1>Album Index</h1>
-
-<div class="row">
-
+  <div class="col-xs-12 col-md-8 col-lg-8">
     <%= form_tag(:root, method: "get") do %>
-      <div class="col-xs-4 col-md-4 col-lg-4">
+      <!-- <div class="col-xs-4"> -->
           <%= label_tag(:song, "Song:") %>
           <%= text_field_tag(:song) %>
-      </div>
-      <div class="col-xs-4 col-md-4 col-lg-4">
+      <!-- </div> -->
+      <!-- <div class="col-xs-4"> -->
           <%= label_tag(:album, "Album:") %>
           <%= text_field_tag(:album) %>
-      </div>
-      <div class="col-xs-4 col-md-4 col-lg-4">
+      <!-- </div> -->
+      <!-- <div class="col-xs-4"> -->
           <%= label_tag(:artist, "Artist:") %>
           <%= text_field_tag(:artist) %>
         <%= submit_tag("Search", id: :search) %>
-      </div>
+      <!-- </div> -->
 
     <% end %>
   </div>
-</div>
-
 <br>
 <br>
 
