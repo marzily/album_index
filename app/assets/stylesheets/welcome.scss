@@ -1,3 +1,23 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  border-bottom: solid blue;
+}
+
+label {
+  padding-left: 20px;
+  padding-right: 2px;
+}
+
+#search {
+  margin-left: 20px;
+}
+
+.header {
+  font-weight: bold;
+  padding-left: 35px;
+}
