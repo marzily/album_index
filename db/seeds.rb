@@ -3,7 +3,7 @@
 end
 
 100.times do
-  Album.create(title: Faker::Hipster.word, artist_id: rand(10) + 1)
+  Album.create(title: Faker::Hipster.word.capitalize, artist_id: rand(10) + 1)
 end
 
 500.times do
