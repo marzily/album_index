@@ -15,26 +15,36 @@
 
     <%= submit_tag("Search", id: :search) %>
   <% end %>
-
-  <br>
-  <br>
-
-  <table>
-    <thead>
-      <th>Song</th><th>Album</th><th>Artist</th>
-    </thead>
-    <tbody>
-      <% if @results %>
-        <% @results.each do |result| %>
-          <tr>
-            <td><%= result.title %></td>
-            <td><%= result.album.title %></td>
-            <td><%= result.artist.name %></td>
-          </tr>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
-
   </div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-xs-4 col-md-4 col-lg-4 header">
+    <p>Song</p>
+  </div>
+  <div class="col-xs-4 col-md-4 col-lg-4 header">
+    <p>Album</p>
+  </div>
+  <div class="col-xs-4 col-md-4 col-lg-4 header">
+    <p>Artist</p>
+  </div>
+</div>
+
+<div class="row">
+  <% if @results %>
+    <% @results.each do |result| %>
+      <div class="col-xs-4 col-md-4 col-lg-4 header">
+        <%= result.title %>
+      </div>
+      <div class="col-xs-4 col-md-4 col-lg-4 header">
+        <%= result.album.title %>
+      </div>
+      <div class="col-xs-4 col-md-4 col-lg-4 header">
+        <%= result.artist.name %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
