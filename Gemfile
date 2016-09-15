@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'faker'
+gem 'rails_12factor', group: :production
 gem 'web-console', group: :development
 
 group :development, :test do
