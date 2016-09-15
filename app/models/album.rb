@@ -9,6 +9,10 @@ class Album < ActiveRecord::Base
   end
 
   def self.albums_by_title(title)
-    Album.where(title: title)
+    Album.where(title: title.downcase)
+  end
+
+  def print_title
+    title.split(' ').map(&:capitalize).join(' ')
   end
 end
