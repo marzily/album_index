@@ -36,13 +36,13 @@
 <% if @results %>
   <% @results.each do |result| %>
     <div class="col-xs-4 col-md-4 col-lg-4 results">
-      <%= result.title %>
+      <%= result.print_title %>
     </div>
     <div class="col-xs-4 col-md-4 col-lg-4 results">
-      <%= result.album.title %>
+      <%= result.album.print_title %>
     </div>
     <div class="col-xs-4 col-md-4 col-lg-4 results">
-      <%= result.artist.name %>
+      <%= result.artist.print_name %>
     </div>
   <% end %>
 <% end %>
