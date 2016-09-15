@@ -10,14 +10,21 @@ class WelcomeController < ApplicationController
     end
 
     def search
-      # byebug
-      if !search_params[:song].empty?
+      search_single_field
+    end
+
+    def search_single_field
+      if single_search?(search_params[:song], search_params[:album], search_params[:artist])
         search_song
-      elsif !search_params[:album].empty?
+      elsif single_search?(search_params[:album], search_params[:song], search_params[:artist])
         search_album
-      elsif !search_params[:artist].empty?
+      elsif single_search?(search_params[:artist], search_params[:album], search_params[:song])
         search_artist
       end
+    end
+
+    def single_search?(filled, blank, blank2)
+      !filled.empty? && blank.empty? && blank2.empty?
     end
 
     def search_song
@@ -31,6 +38,4 @@ class WelcomeController < ApplicationController
     def search_artist
       Artist.search(search_params[:artist])
     end
-
-
 end
