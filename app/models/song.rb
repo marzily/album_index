@@ -14,4 +14,8 @@ class Song < ActiveRecord::Base
   def self.search(title)
     Song.where(title: title.downcase)
   end
+
+  def print_title
+    title.split(' ').map(&:capitalize).join(' ')
+  end
 end

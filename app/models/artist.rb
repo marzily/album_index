@@ -12,4 +12,8 @@ class Artist < ActiveRecord::Base
   def self.artists_by_name(name)
     Artist.where(name: name.downcase)
   end
+
+  def print_name
+    name.split(' ').map(&:capitalize).join(' ')
+  end
 end
