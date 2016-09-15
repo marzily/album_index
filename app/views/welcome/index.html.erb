@@ -1,4 +1,9 @@
-<h1>Album Index</h1>
+<br>
+<br>
+<div class="col-lg 8">
+  <h1>Album Index</h1>
+</div>
+
 <br>
   <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
     <%= form_tag(:root, method: "get") do %>
@@ -17,7 +22,7 @@
 <br>
 <br>
 <br>
-
+<br>
 <div class="col-xs-4 col-md-4 col-lg-4 header">
   <p>Song</p>
 </div>
@@ -27,6 +32,9 @@
 <div class="col-xs-4 col-md-4 col-lg-4 header">
   <p>Artist</p>
 </div>
+
+<br>
+<br>
 
 <% if @results %>
   <% @results.each do |result| %>
