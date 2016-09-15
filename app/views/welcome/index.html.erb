@@ -1,34 +1,40 @@
-<h1>Album Index</h1>
+<div class="row">
+  <div class="col-xs-12 col-md-12 col-lg-12">
 
-<%= form_tag(:root, method: "get") do %>
-  <%= label_tag(:song, "Song:") %>
-  <%= text_field_tag(:song) %>
+  <h1>Album Index</h1>
 
-  <%= label_tag(:album, "Album:") %>
-  <%= text_field_tag(:album) %>
+  <%= form_tag(:root, method: "get") do %>
+    <%= label_tag(:song, "Song:") %>
+    <%= text_field_tag(:song) %>
 
-  <%= label_tag(:artist, "Artist:") %>
-  <%= text_field_tag(:artist) %>
+    <%= label_tag(:album, "Album:") %>
+    <%= text_field_tag(:album) %>
 
-  <%= submit_tag("Search", id: :search) %>
-<% end %>
+    <%= label_tag(:artist, "Artist:") %>
+    <%= text_field_tag(:artist) %>
 
-<br>
-<br>
+    <%= submit_tag("Search", id: :search) %>
+  <% end %>
 
-<table>
-  <thead>
-    <th>Song</th><th>Album</th><th>Artist</th>
-  </thead>
-  <tbody>
-    <% if @results %>
-      <% @results.each do |result| %>
-        <tr>
-          <td><%= result.title %></td>
-          <td><%= result.album.title %></td>
-          <td><%= result.artist.name %></td>
-        </tr>
+  <br>
+  <br>
+
+  <table>
+    <thead>
+      <th>Song</th><th>Album</th><th>Artist</th>
+    </thead>
+    <tbody>
+      <% if @results %>
+        <% @results.each do |result| %>
+          <tr>
+            <td><%= result.title %></td>
+            <td><%= result.album.title %></td>
+            <td><%= result.artist.name %></td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+
+  </div>
+</div>
