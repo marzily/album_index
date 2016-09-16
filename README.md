@@ -8,9 +8,8 @@ Rails application with a search interface. Customer service can search song data
 * Mobile responsive user interface
 * Test suite uses RSpec
 
-To run on local machine:
+To run on local machine, clone repo and:
 
-Clone repo
 
 ```
 $ bundle install
@@ -18,11 +17,16 @@ $ rake db:create db:migrate db:seed
 $ rails server
 ```
 
-To test:
+To test, clone repo and:
 ```
+$ bundle install
+$ rake db:create db:migrate
 $ rspec
 ```
 
 Production application is hosted on Heroku at:
 
 `https://album-index-ml.herokuapp.com/`
+
+#### Album Index
+![alt text](public/Album Index.png)
