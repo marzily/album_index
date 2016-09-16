@@ -23,31 +23,30 @@
 <br>
 <br>
 <br>
-<div class='row' id='search-results'>
-  <div class="col-xs-4 col-md-4 col-lg-4 header">
-    <p>Song</p>
-  </div>
-  <div class="col-xs-4 col-md-4 col-lg-4 header">
-    <p>Album</p>
-  </div>
-  <div class="col-xs-4 col-md-4 col-lg-4 header">
-    <p>Artist</p>
-  </div>
 
-  <br>
-  <br>
-
-  <% if @results %>
-    <% @results.each do |result| %>
-      <div class="col-xs-4 col-md-4 col-lg-4 results">
-        <%= result.print_title %>
-      </div>
-      <div class="col-xs-4 col-md-4 col-lg-4 results">
-        <%= result.album.print_title %>
-      </div>
-      <div class="col-xs-4 col-md-4 col-lg-4 results">
-        <%= result.artist.print_name %>
-      </div>
-    <% end %>
-  <% end %>
+<div class="col-xs-4 col-md-4 col-lg-4 header">
+  <p>Song</p>
 </div>
+<div class="col-xs-4 col-md-4 col-lg-4 header">
+  <p>Album</p>
+</div>
+<div class="col-xs-4 col-md-4 col-lg-4 header">
+  <p>Artist</p>
+</div>
+
+<br>
+<br>
+
+<% if @results %>
+  <% @results.each do |result| %>
+    <div class="col-xs-4 col-md-4 col-lg-4 results">
+      <%= result.print_title %>
+    </div>
+    <div class="col-xs-4 col-md-4 col-lg-4 results">
+      <%= result.album.print_title %>
+    </div>
+    <div class="col-xs-4 col-md-4 col-lg-4 results">
+      <%= result.artist.print_name %>
+    </div>
+  <% end %>
+<% end %>
