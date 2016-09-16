@@ -28,5 +28,5 @@ Production application is hosted on Heroku at:
 
 `https://album-index-ml.herokuapp.com/`
 
-### Album Index Search Interface
+## Album Index Search Interface:
 ![alt text](public/Album Index.png)
