@@ -18,4 +18,8 @@ class Song < ActiveRecord::Base
   def print_title
     title.split(' ').map(&:capitalize).join(' ')
   end
+
+  def lowercase_title
+    title.downcase
+  end
 end

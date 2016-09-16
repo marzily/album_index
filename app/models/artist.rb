@@ -16,4 +16,8 @@ class Artist < ActiveRecord::Base
   def print_name
     name.split(' ').map(&:capitalize).join(' ')
   end
+
+  def lowercase_name
+    name.downcase
+  end
 end

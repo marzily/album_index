@@ -26,8 +26,8 @@ class WelcomeController < ApplicationController
     def tripple
       if tripple?(search_params[:song], search_params[:album], search_params[:artist])
         songs = search_song
-        songs = songs.select { |song| song.album.title == search_params[:album] }
-        songs = songs.select { |song| song.artist.name == search_params[:artist] }
+        songs = songs.select { |song| song.album.lowercase_title == search_params[:album].downcase }
+        songs = songs.select { |song| song.artist.lowercase_name == search_params[:artist].downcase }
       end
     end
 
@@ -38,13 +38,13 @@ class WelcomeController < ApplicationController
     def double
       if double?(search_params[:song], search_params[:album], search_params[:artist])
         songs = search_song
-        songs.select { |song| song.album.title == search_params[:album] }
+        songs.select { |song| song.album.lowercase_title == search_params[:album].downcase }
       elsif double?(search_params[:song], search_params[:artist], search_params[:album])
         songs = search_song
-        songs.select { |song| song.artist.name == search_params[:artist] }
+        songs.select { |song| song.artist.lowercase_name == search_params[:artist].downcase }
       elsif double?(search_params[:album], search_params[:artist], search_params[:song])
         songs = search_album
-        songs.select { |song| song.artist.name == search_params[:artist] }
+        songs.select { |song| song.artist.lowercase_name == search_params[:artist].downcase }
       end
     end
 
